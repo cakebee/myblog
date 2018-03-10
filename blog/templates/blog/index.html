@@ -1,0 +1,14 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>测试中...</h1>
+{%for article in articles %}
+	<a href="{% url 'blog:article_page' article.id%}">{{ article.title }}</a>
+	<br/>
+{% endfor %}
+<a href="{% url 'blog:edit_page' 0 %}">新建</a>
+</body>
+</html>

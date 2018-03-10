@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form action="{% url 'blog:edit_action' %}" method="post">
+		{% csrf_token %}
+			<input type="hidden" name="article_id" value="{{ article.id | default:'0' }}"/>
+			<label>title
+				<input type="text" name="title" value="{{ article.title }}">
+			</label>
+			<br/>
+			<label>text
+				<input type="text" name="content" value="{{ article.content }}">
+			</label>
+			<br/>
+			<input type="submit" value="OK">
+	</form>
+</body>
+</html>
